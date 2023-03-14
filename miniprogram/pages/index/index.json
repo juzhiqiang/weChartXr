@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "xrCom": "../../components/xrCom/xrCom"
+  },
+  "disableScroll": false
+}
