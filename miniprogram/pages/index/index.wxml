@@ -1,5 +1,18 @@
 <view>
+	<view class="btn">
+		<view bind:tap="tab" data-type="model">模型</view>
+		<view  bindtap="tab"  data-type="scence">材质</view>
+	</view>
+	<xrModel
+	 wx:if="{{type==='model'}}"
+	 disable-scroll
+	 id="main-frame"
+	 width="{{renderWidth}}"
+	 height="{{renderHeight}}"
+	 style="width:{{width}}px;height:{{height}}px;"
+	/>
 	<xrCom
+	 wx:else
 	 disable-scroll
 	 id="main-frame"
 	 width="{{renderWidth}}"

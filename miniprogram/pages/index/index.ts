@@ -12,16 +12,17 @@ const stystemInfo = () => {
   return {
     width,
     height,
-    dpi
-  }
-}
+    dpi,
+  };
+};
 
 Page({
   data: {
     width: 300,
     height: 300,
     renderWidth: 300,
-    renderHeight: 300
+    renderHeight: 300,
+    type: "model",
   },
   onLoad() {
     const { width, height, dpi } = stystemInfo();
@@ -30,6 +31,14 @@ Page({
       height,
       renderHeight: height * dpi,
       renderWidth: width * dpi,
-    })
-  }
+    });
+  },
+  /**
+   * name
+   */
+  tab(event: { currentTarget: { dataset: { type: any; }; }; }) {
+    this.setData({
+      type: event.currentTarget.dataset.type,
+    });
+  },
 });

@@ -1,0 +1,51 @@
+<!--index.wxml-->
+<!-- tick动画帧触发 -->
+<xr-scene bind:ready="handleReady" bind:tick="handleTick">
+	<!-- xr资源管理 -->
+	<xr-assets bind:progress="handleAssetsProgress" bind:loaded="handleAssetsLoad">
+		<xr-asset-load type="gltf" asset-id="damage-helmet" src="https://mmbizwxaminiprogram-1258344707.cos.ap-guangzhou.myqcloud.com/xr-frame/demo/damage-helmet/index.glb" />
+		<xr-asset-load type="gltf" asset-id="miku" src="https://mmbizwxaminiprogram-1258344707.cos.ap-guangzhou.myqcloud.com/xr-frame/demo/miku.glb" />
+
+	</xr-assets>
+	<!-- 灯光类型 ambient 环境光-->
+	<xr-light type="ambient" color="1 1 1" intensity="1" />
+	<!-- 直线光 cast-shadow投射阴影  -->
+	<xr-light
+	 type="directional"
+	 rotation="40 70 0"
+	 color="1 1 1"
+	 intensity="3"
+	 cast-shadow
+	/>
+
+	<!-- 添加环境贴图 -->
+	<xr-env env-data="xr-frame-team-workspace-day" />
+
+	<xr-gltf
+	 node-id="damage-helmet"
+	 model="damage-helmet"
+	 mesh-shape
+	 bind:touch-shape="handleTouch"
+	/>
+	<!-- 人物模型 shape-gizmo 开启调试  多个顶点物体可以使用cube-shape="autoFit:ture" 创造一个盒子用于点击 -->
+	<xr-gltf
+	 model="miku"
+	 position="-0.15 0.75 0"
+	 scale="0.07 0.07 0.07"
+	 rotation="0 180 0"
+	 anim-autoplay
+	 cube-shape="autoFit:ture"
+	 shape-gizmo
+	 bind:touch-shape="handleTouch"
+	/>
+
+	<!-- 添加天空盒子 skybox 系统默认 -->
+	<xr-camera
+	 clear-color="0.4 0.8 0.6 1"
+	 position="0 1 4"
+	 target="damage-helmet"
+	 camera-orbit-control
+	 background="skybox"
+	/>
+</xr-scene>
+
