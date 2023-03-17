@@ -22,7 +22,7 @@ Page({
     height: 300,
     renderWidth: 300,
     renderHeight: 300,
-    type: "model",
+    type: "ar",
   },
   onLoad() {
     const { width, height, dpi } = stystemInfo();
@@ -33,10 +33,15 @@ Page({
       renderWidth: width * dpi,
     });
   },
+  handlePosition(event: any) {
+    this.setData({
+      pos: event.detail,
+    });
+  },
   /**
    * name
    */
-  tab(event: { currentTarget: { dataset: { type: any; }; }; }) {
+  tab(event: { currentTarget: { dataset: { type: any } } }) {
     this.setData({
       type: event.currentTarget.dataset.type,
     });

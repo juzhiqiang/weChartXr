@@ -1,7 +1,8 @@
 <view>
 	<view class="btn">
 		<view bind:tap="tab" data-type="model">模型</view>
-		<view  bindtap="tab"  data-type="scence">材质</view>
+		<view bindtap="tab" data-type="scence">材质</view>
+		<view bindtap="tab" data-type="ar">AR</view>
 	</view>
 	<xrModel
 	 wx:if="{{type==='model'}}"
@@ -10,8 +11,17 @@
 	 width="{{renderWidth}}"
 	 height="{{renderHeight}}"
 	 style="width:{{width}}px;height:{{height}}px;"
+	 bind:testPosition="handlePosition"
 	/>
 	<xrCom
+	 wx:elif="{{type==='scence'}}"
+	 disable-scroll
+	 id="main-frame"
+	 width="{{renderWidth}}"
+	 height="{{renderHeight}}"
+	 style="width:{{width}}px;height:{{height}}px;"
+	/>
+	<arCom
 	 wx:else
 	 disable-scroll
 	 id="main-frame"
@@ -19,5 +29,13 @@
 	 height="{{renderHeight}}"
 	 style="width:{{width}}px;height:{{height}}px;"
 	/>
+	<block>
+		<view style="position:absolute;left:{{pos[0]}}px;top:{{pos[1]}}px">
+			<view style="text-align:center;color:#fff;font-size:24px;">
+				模型信息
+			</view>
+		</view>
+
+	</block>
 </view>
 

@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "xrCom": "../../components/xrCom/xrCom",
+    "arCom": "../../components/arCom/arCom",
     "xrModel": "../../components/xrModel/xrModel"
   },
   "disableScroll": false

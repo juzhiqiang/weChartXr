@@ -29,6 +29,7 @@
 	/>
 	<!-- 人物模型 shape-gizmo 开启调试  多个顶点物体可以使用cube-shape="autoFit:ture" 创造一个盒子用于点击 -->
 	<xr-gltf
+	 id="miku"
 	 model="miku"
 	 position="-0.15 0.75 0"
 	 scale="0.07 0.07 0.07"
@@ -41,6 +42,7 @@
 
 	<!-- 添加天空盒子 skybox 系统默认 -->
 	<xr-camera
+	 id="camera"
 	 clear-color="0.4 0.8 0.6 1"
 	 position="0 1 4"
 	 target="damage-helmet"

@@ -17,10 +17,11 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "es6": false,
-    "enhance": false,
+    "es6": true,
+    "enhance": true,
     "ignoreDevUnusedFiles": false,
-    "ignoreUploadUnuseFiles": false
+    "ignoreUploadUnuseFiles": false,
+    "minified": true
   },
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
